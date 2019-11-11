@@ -6,3 +6,33 @@
 .scroll-slider li {
 	list-style: none;
 }
+
+.scroll-slider .slide {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	min-height: 500px;
+}
+
+.scroll-slider .slide .inner {
+	width: 100%;
+}
+
+.scroll-slider .bg {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	min-height: 500px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: opacity .5s ease-in-out;
+}
+
+.scroll-slider .text {
+    position: absolute;
+    z-index: 100;
+}
