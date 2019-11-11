@@ -1,7 +1,6 @@
 (function ($) {
 
 	$.fn.scrollSlider = function (options) {
-
 		var settings = $.extend({
 			'autoplay': false,
 			'fixedbg': true
@@ -29,6 +28,6 @@
 			}
 
 		});
-
 	}
+	
 })(jQuery);
