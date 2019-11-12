@@ -38,6 +38,10 @@ html {
 	transition: opacity .5s ease-in-out;
 }
 
+.scroll-slider.fixedbg .bg {
+	position: fixed;
+}
+
 .scroll-slider .text {
     position: absolute;
     z-index: 100;

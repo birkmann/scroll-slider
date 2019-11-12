@@ -3,7 +3,7 @@
 	$.fn.scrollSlider = function (options) {
 		var settings = $.extend({
 			'autoplay': false,
-			'fixedbg': true
+			'fixedbg': false
 		}, options);
 
 		return this.each(function () {
@@ -24,6 +24,10 @@
 
 				for (var i = 0; i <= slides.length - 1; i++) {
 					$(this).find(".nav-right ul").append("<li><a href=#scroll-slide-"+i+"><span></span></a></li>");
+				}
+
+				if (settings.fixedbg == true) {
+					$(this).addClass("fixedbg");
 				}
 			}
 
