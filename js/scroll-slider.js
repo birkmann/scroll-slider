@@ -35,3 +35,21 @@
 	}
 	
 })(jQuery);
+
+function eleInView(el){
+	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	return (h < el.getBoundingClientRect().bottom && el.getBoundingClientRect().top < h);
+}
+
+window.onload = function() {
+	$(window).on('scroll', function() {
+		$('.scroll-slider').find('.slide').each(function(){
+			if (eleInView(this)){
+				$(this).addClass("active");
+			};
+			if (!eleInView(this)){
+				$(this).removeClass("active");
+			};
+		});
+	}
+)};
