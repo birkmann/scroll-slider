@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Slider</title>
 	<link rel="stylesheet" href="css/scroll-slider.css">
+	<link rel="stylesheet" href="css/scroll-slider-theme-01.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
 									Button
 								</a>
 							</div>
-							<div class="bg" data-bg="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"></div>
+							<div class="bg" data-bg="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"></div>
 						</div>
 					</div>
 				</li>
@@ -36,7 +37,7 @@
 									Button
 								</a>
 							</div>
-							<div class="bg" data-bg="https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"></div>
+							<div class="bg" data-bg="https://crossrivergorilla.org/wp-content/uploads/2009/03/gorilla-protection.jpg"></div>
 						</div>
 					</div>
 				</li>
@@ -58,11 +59,13 @@
 			<div class="counter"></div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!--script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
 	<script src="js/scroll-slider.js"></script>
 	<script>
 		$(".scroll-slider").scrollSlider({
-			fixedbg: false
+			fixed: true
 		});
 	</script>
 </body>

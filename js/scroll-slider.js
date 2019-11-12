@@ -3,7 +3,7 @@
 	$.fn.scrollSlider = function (options) {
 		var settings = $.extend({
 			'autoplay': false,
-			'fixedbg': false
+			'fixed': false
 		}, options);
 
 		return this.each(function () {
@@ -36,6 +36,7 @@
 	
 })(jQuery);
 
+/*
 function eleInView(el){
 	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 	return (h < el.getBoundingClientRect().bottom && el.getBoundingClientRect().top < h);
@@ -53,3 +54,39 @@ window.onload = function() {
 		});
 	}
 )};
+*/
+
+$(window).on('resize scroll', function() {
+	$('.scroll-slider').find('.slide').each(function(){
+    	if (window.scrollY > $(this).offset().top + 200) {
+			$(this).addClass("active");
+		} else {
+			$(this).removeClass("active");
+		}
+
+
+	});
+});
+
+
+/*
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+	$('.scroll-slider').find('.slide').each(function(){
+		if ($(this).isInViewport()) {
+        	$(this).addClass("active");
+    	} else {
+        	$(this).removeClass("active");
+    	}
+	});
+});
+*/
