@@ -1,40 +1,34 @@
-.scroll-slider .text {
-	transform: translateX(-200%);
+.scroll-slider.fixed {
+	background: #000;
+}
+
+.scroll-slider.fixed .bg {
+	position: fixed;
+	box-shadow: inset 0 0 100px black;
+	transition: opacity .5s ease-in-out;
+	opacity: 0;
+}
+
+.scroll-slider.fixed .slide.active .bg {
+	opacity: 1;
+}
+
+.scroll-slider.fixed .text {
+	position: fixed;
+    opacity: 0;
+    transform: translateX(-200%);
     transition: all 250ms ease-in-out;
-    position: absolute;
-    z-index: 100;
     bottom: 5%;
     color: #fff;
     margin: 50px 20px;
     text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.scroll-slider .slide.active .text {
+.scroll-slider.fixed .slide.active .text {
+	opacity: 1;
 	transform: translateX(0%);
 }
 
-.scroll-slider .text {
-	position: fixed;
-}
-
-.scroll-slider .slide .bg {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100vh;
-	min-height: 500px;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	box-shadow: inset 0 0 100px black;
-}
-
-.scroll-slider.fixed .slide .bg {
-	transition: opacity .5s ease-in-out;
-	position: fixed;
-	opacity: 0;
-}
-
-.scroll-slider.fixedbg .slide.active .bg {
-	opacity: 1;
+#scroll-slide-0 .bg {
+	background-position: center 80%;
 }

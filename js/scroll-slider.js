@@ -26,8 +26,8 @@
 					$(this).find(".nav-right ul").append("<li><a href=#scroll-slide-"+i+"><span></span></a></li>");
 				}
 
-				if (settings.fixedbg == true) {
-					$(this).addClass("fixedbg");
+				if (settings.fixed == true) {
+					$(this).addClass("fixed");
 				}
 			}
 
@@ -36,57 +36,11 @@
 	
 })(jQuery);
 
-/*
-function eleInView(el){
-	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-	return (h < el.getBoundingClientRect().bottom && el.getBoundingClientRect().top < h);
-}
-
-window.onload = function() {
-	$(window).on('scroll', function() {
-		$('.scroll-slider').find('.slide').each(function(){
-			if (eleInView(this)){
-				$(this).addClass("active");
-			};
-			if (!eleInView(this)){
-				$(this).removeClass("active");
-			};
-		});
-	}
-)};
-*/
-
 $(window).on('resize scroll', function() {
 	$('.scroll-slider').find('.slide').each(function(){
-    	if (window.scrollY > $(this).offset().top + 200) {
+		if ( window.scrollY >= $(this).offset().top - 200) {
+			$(this).siblings().removeClass("active");
 			$(this).addClass("active");
-		} else {
-			$(this).removeClass("active");
 		}
-
-
 	});
 });
-
-
-/*
-$.fn.isInViewport = function() {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-};
-
-$(window).on('resize scroll', function() {
-	$('.scroll-slider').find('.slide').each(function(){
-		if ($(this).isInViewport()) {
-        	$(this).addClass("active");
-    	} else {
-        	$(this).removeClass("active");
-    	}
-	});
-});
-*/
