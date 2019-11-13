@@ -1,8 +1,8 @@
-.scroll-slider.fixed {
+.scroll-slider {
 	background: #000;
 }
 
-.scroll-slider.fixed .bg {
+.scroll-slider .bg {
 	position: fixed;
 	box-shadow: inset 0 0 100px black;
 	transition: opacity .5s ease-in-out;
@@ -13,22 +13,74 @@
 	opacity: 1;
 }
 
-.scroll-slider.fixed .text {
+.scroll-slider .text {
 	position: fixed;
-    opacity: 0;
-    transform: translateX(-200%);
-    transition: all 250ms ease-in-out;
-    bottom: 5%;
-    color: #fff;
-    margin: 50px 20px;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	opacity: 0;
+	transform: translateX(-200%);
+	transition: all 250ms ease-in-out;
+	bottom: 5%;
+	color: #fff;
+	margin: 50px 20px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.scroll-slider.fixed .slide.active .text {
+@media (min-width: 992px) {
+	.scroll-slider .text {
+	    margin: 50px 100px;
+	}
+}
+
+.scroll-slider .slide.active .text {
 	opacity: 1;
 	transform: translateX(0%);
 }
 
 #scroll-slide-0 .bg {
-	background-position: center 80%;
+	background-position: center bottom;
+}
+
+.scroll-slider .text h4 {
+	position: relative;
+	margin: 0;
+	color: #e3a20e;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1em;
+	letter-spacing: 0.5em;
+	margin: 0;
+}
+
+.scroll-slider .text h4:after {
+	content: "";
+	position: absolute;
+	width: 35px;
+	height: 1px;
+	bottom: 50%;
+	left: auto;
+	border-bottom: 1px solid #e3a20e;
+	margin-left: 10px;
+}
+
+.scroll-slider .text h2 {
+	font-family: 'Vidaloka', serif;
+	font-size: 3em;
+	line-height: 1em;
+	margin: 10px 0 20px;
+	position: relative;
+	font-weight: normal;
+}
+
+@media (min-width: 992px) {
+	.scroll-slider .text h2 {
+		font-size: 5em;
+	}
+}
+
+.scroll-slider .text h3 {
+    font-family: 'Vidaloka', serif;
+    font-size: 2em;
+    line-height: 1em;
+    margin: 10px 0;
+    position: relative;
+    font-weight: normal;
 }
