@@ -17,13 +17,14 @@
 				$(slides).each(function (i) {
 					var bgImage = $(this).find(".bg").data('bg');
 					$(this).attr('id', 'scroll-slide-' + i);
+					$(this).attr('data-index', i);
 					$(this).find(".bg").css("background-image", "url(' " + bgImage + " ')");
 				});
 
 				$(this).append("<nav class=nav-right><ul></ul></nav>");
 
 				for (var i = 0; i <= slides.length - 1; i++) {
-					$(this).find(".nav-right ul").append("<li><a href=#scroll-slide-"+i+"><span></span></a></li>");
+					$(this).find(".nav-right ul").append("<li data-index="+i+"><a href=#scroll-slide-"+i+"><span></span></a></li>");
 				}
 
 				if (settings.fixed == true) {
@@ -36,11 +37,13 @@
 	
 })(jQuery);
 
-$(window).on('resize scroll', function() {
+$(window).on('load resize scroll', function() {
 	$('.scroll-slider').find('.slide').each(function(){
 		if ( window.scrollY >= $(this).offset().top - 200) {
 			$(this).siblings().removeClass("active");
 			$(this).addClass("active");
+			$('.scroll-slider .nav-right li').removeClass("active");
+			$('.scroll-slider .nav-right li[data-index="' + $(this).attr('data-index') + '"]').addClass("active");
 		}
 	});
 });

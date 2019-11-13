@@ -73,11 +73,11 @@ html {
 }
 
 .scroll-slider nav.nav-right ul li a:hover span{
-	background: #000;
+	background: #888;
 }
 
 .scroll-slider nav.nav-right ul li.active a {
-	border: 1px solid #000;
+	border: 1px solid #888;
 }
 
 .scroll-slider nav.nav-right ul li:hover a span,
